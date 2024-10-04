@@ -1,6 +1,7 @@
 import os
 
 import streamlit as st
+from dotenv import load_dotenv
 from langchain_chroma import Chroma
 # from PyPDF2 import PdfReader
 # from langchain.chains.question_answering import load_qa_chain
@@ -14,8 +15,8 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGener
 # from langchain_core.prompts import PromptTemplate
 # from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAby19bdQ5i9Fid2W6pgODIdnzcV9_PtwQ"
+load_dotenv()
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 st.set_page_config(page_title="AI RAG", layout="wide")
 
 st.title("Hai Welcometo AI RAG")
