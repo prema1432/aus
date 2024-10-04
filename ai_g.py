@@ -127,8 +127,7 @@ def main():
                     if not additional_text:
                         st.warning("Please provide a Webpage URL.", icon="⚠️")
 
-                    loader = AsyncHtmlLoader(["https://react.dev/learn/installation"])
-                    # loader = AsyncHtmlLoader(["https://react.dev/learn/installation"])
+                    loader = AsyncHtmlLoader([additional_text],verify_ssl=False)
                     documents = loader.load()
                 elif file_type == "File Upload":
                     print("uploaded_fileuploaded_file",uploaded_file)
